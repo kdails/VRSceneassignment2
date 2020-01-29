@@ -5,9 +5,10 @@
     <title>Salem Dock - Kara</title>
     <meta name="description" content="Salem Dock - Kara" />
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
-    <a-scene background="white">
+    <a-scene cursor="rayOrigin: mouse">
       <a-assets>
         <!-- Stolen from Google Poly - by google :-) -->
         <a-asset-item
@@ -20,6 +21,8 @@
         position="-2.7 -1.5 -2.9"
         scale="4 3 4"
         rotation="0 0 0"
+        event-set__mouseenter="scale: 4 3.5 4"
+        event-set__mouseleave="scale: 4 3 4"
       ></a-entity>
       <a-text
         value="Kara Dailey"
@@ -67,6 +70,8 @@
         material="color: #E4CA91"
         geometry="primitive: sphere; radius: .8"
         scale="0.1 0.15 0.05"
+        event-set__mouseenter="color: #af7a65 "
+        event-set__mouseleave="color: #E4CA91"
       ></a-sphere>
 
       <a-sphere
@@ -77,6 +82,8 @@
         material="color: #E4CA91"
         geometry="primitive: sphere; radius: .8"
         scale="0.05 0.05 0.05"
+        event-set__mouseenter="color: #af7a65 "
+        event-set__mouseleave="color: #E4CA91"
       ></a-sphere>
 
       <a-cylinder
@@ -88,6 +95,8 @@
         material="color: #716448"
         geometry="primitive: cylinder; radius: 0.5; height: 2"
         scale="0.1 1.7 0.1"
+        shadow event-set__mousedown="opacity: 0.8"
+        event-set__mouseup="opacity: 1"
       ></a-cylinder>
 
       <a-cylinder
@@ -153,12 +162,6 @@
         geometry="primitive: sphere; radius: 500; segmentsWidth: 64; segmentsHeight: 32"
         scale="-1 1 1"
       ></a-sky>
-  <a-camera>
-    <a-cursor color="blue" fuse="true">
-      <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.5 0.5 0.5"></a-animation>
-      <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.5 0.5 0.5" to="1 1 1"></a-animation>
-    </a-cursor>
-  </a-camera>
     </a-scene>
   </body>
 </html>
