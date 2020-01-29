@@ -8,11 +8,9 @@
     <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
-    <a-scene
-      cursor="rayOrigin: mouse"
-      raycaster="objects: .clickable"
-      background="color: black"
-    >
+    <a-scene>
+      <a-camera position="0 2 0">
+      </a-camera>
       <a-assets>
         <!-- Stolen from Google Poly - by google :-) -->
         <a-asset-item
@@ -191,7 +189,7 @@
       animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
       animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
       animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-      color="white"
+      color="blue"
       fuse="true"></a-cursor>
   </a-camera>
     </a-scene>
