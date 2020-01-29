@@ -25,6 +25,9 @@
         position="-2.7 -1.5 -2.9"
         scale="4 3 4"
         rotation="0 0 0"
+        event-set__click="scale: 4 3.5 4"
+        event-set__mouseenter="opacity: 0.8"
+        event-set__mouseleave="opacity: 1.0"
       ></a-entity>
       <a-text
         value="Kara Dailey"
@@ -65,23 +68,32 @@
       ></a-box>
 
       <a-sphere
+        class="clickable"
         id="karabody"
-        position="-0.1 1.4 -0.8"
+        position="-0.1 1.4 -1.2"
         radius="1"
         color="#E4CA91"
         material="color: #E4CA91"
         geometry="primitive: sphere; radius: .8"
         scale="0.1 0.15 0.05"
+        shadow
+        event-set__click="radius: 1.2"
+        event-set__mouseenter="opacity: 0.8"
+        event-set__mouseleave="opacity: 1.0"
       ></a-sphere>
 
       <a-sphere
+        class="clickable"
         id="karahead"
-        position="-0.1 1.55 -0.8"
+        position="-0.1 1.55 -1.2"
         radius="1"
         color="#E4CA91"
         material="color: #E4CA91"
         geometry="primitive: sphere; radius: .8"
         scale="0.05 0.05 0.05"
+        event-set__click="radius: 1.2"
+        event-set__mouseenter="opacity: 0.8"
+        event-set__mouseleave="opacity: 1.0"
       ></a-sphere>
 
       <a-cylinder
@@ -164,9 +176,6 @@
         material="color: #6A92AD"
         geometry="primitive: plane; width: 4; height: 4"
         scale="5 5 5"
-        event-set__click="color: #29B0AC"
-        event-set__mouseenter="opacity: 0.8"
-        event-set__mouseleave="opacity: 1.0"
       ></a-plane>
 
       <a-sky
@@ -176,19 +185,15 @@
         material="color: #6495ED; side: back; shader: flat; npot: true"
         geometry="primitive: sphere; radius: 500; segmentsWidth: 64; segmentsHeight: 32"
         scale="-1 1 1"
-        event-set__click="color: #B0F5D6"
-        event-set__mouseenter="opacity: 0.8"
-        event-set__mouseleave="opacity: 1.0"
       ></a-sky>
-      <a-camera>
-        <a-cursor
-          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
-          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
-          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-          color="white"
-          fuse="true"
-        ></a-cursor>
-      </a-camera>
+        <a-camera>
+    <a-cursor
+      animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+      animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+      animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+      color="white"
+      fuse="true"></a-cursor>
+  </a-camera>
     </a-scene>
   </body>
 </html>
