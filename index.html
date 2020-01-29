@@ -1,16 +1,164 @@
- <a-scene background="color: black">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Salem Dock - Kara</title>
+    <meta name="description" content="Salem Dock - Kara" />
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="white">
+      <a-assets>
+        <!-- Stolen from Google Poly - by google :-) -->
+        <a-asset-item
+          id="sailboat-gltf"
+          src="https://kdails.github.io/ships/model.gltf"
+        ></a-asset-item>
+      </a-assets>
+      <a-entity
+        gltf-model="#sailboat-gltf"
+        position="-2.7 -1.5 -2.9"
+        scale="4 3 4"
+        rotation="0 0 0"
+      ></a-entity>
+      <a-text
+        value="Kara Dailey"
+        position="0 3 -3"
+        align="center"
+        text="anchor: align; width: 5; value: Kara Dailey; align: center"
+        scale="1 1 1"
+      ></a-text>
 
+      <a-box
+        id="oppositedock"
+        position="5.55 0 -17"
+        rotation="0 89 0"
+        color="#726651"
+        material="color: #726651"
+        geometry="primitive: box"
+        scale="25 3.5 1"
+      ></a-box>
+
+      <a-box
+        id="dockbase"
+        position="-3 1.25 -.5"
+        rotation="0 50 0"
+        color="#726651"
+        material="color: #726651"
+        geometry="primitive: box"
+        scale="5 0.1 4"
+      ></a-box>
+
+      <a-box
+        id="docktop"
+        position="-3 1.3 -.5"
+        rotation="0 50 0"
+        color="#52421E"
+        material="color: #52421E"
+        geometry="primitive: box"
+        scale="5 0.05 4"
+      ></a-box>
+
+      <a-sphere
+        id="karabody"
+        position="-0.1 1.4 -0.8"
+        radius="1"
+        color="#E4CA91"
+        material="color: #E4CA91"
+        geometry="primitive: sphere; radius: .8"
+        scale="0.1 0.15 0.05"
+      ></a-sphere>
+
+      <a-sphere
+        id="karahead"
+        position="-0.1 1.55 -0.8"
+        radius="1"
+        color="#E4CA91"
+        material="color: #E4CA91"
+        geometry="primitive: sphere; radius: .8"
+        scale="0.05 0.05 0.05"
+      ></a-sphere>
+
+      <a-cylinder
+        id="post1"
+        position="0 0 -1.15"
+        radius="0.5"
+        height="2"
+        color="#716448"
+        material="color: #716448"
+        geometry="primitive: cylinder; radius: 0.5; height: 2"
+        scale="0.1 1.7 0.1"
+      ></a-cylinder>
+
+      <a-cylinder
+        id="post2"
+        position="-0.35 0 -1.45"
+        radius="0.5"
+        height="2"
+        color="#716448"
+        material="color: #716448"
+        geometry="primitive: cylinder; radius: 0.5; height: 2"
+        scale="0.1 1.7 0.1"
+      ></a-cylinder>
+
+      <a-cylinder
+        id="post3"
+        position="-0.8 0 -1.8"
+        radius="0.5"
+        height="2"
+        color="#716448"
+        material="color: #716448"
+        geometry="primitive: cylinder; radius: 0.5; height: 2"
+        scale="0.1 1.7 0.1"
+      ></a-cylinder>
+
+      <a-cylinder
+        id="post4"
+        position="-1.2 0 -2.15"
+        radius="0.5"
+        height="2"
+        color="#716448"
+        material="color: #716448"
+        geometry="primitive: cylinder; radius: 0.5; height: 2"
+        scale="0.1 1.7 0.1"
+      ></a-cylinder>
+
+      <a-cylinder
+        id="post5"
+        position="-1.7 0 -2.5"
+        radius="0.5"
+        height="2"
+        color="#716448"
+        material="color: #716448"
+        geometry="primitive: cylinder; radius: 0.5; height: 2"
+        scale="0.1 1.7 0.1"
+      ></a-cylinder>
+
+      <a-plane
+        id="ocean"
+        position="-5 0.8 -4"
+        rotation="-90 0 10"
+        width="4"
+        height="4"
+        color="#6A92AD"
+        material="color: #6A92AD"
+        geometry="primitive: plane; width: 4; height: 4"
+        scale="5 5 5"
+      ></a-plane>
+
+      <a-sky
+        id="sky"
+        color="#6495ED"
+        material="color: #6495ED; side: back; shader: flat; npot: true"
+        geometry="primitive: sphere; radius: 500; segmentsWidth: 64; segmentsHeight: 32"
+        scale="-1 1 1"
+      ></a-sky>
   <a-camera>
-    <a-cursor color="white" fuse="true">
+    <a-cursor color="blue" fuse="true">
       <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1500" fill="backwards" from="1 1 1" to="0.5 0.5 0.5"></a-animation>
       <a-animation begin="click" easing="ease-in" attribute="scale" dur="150" fill="forwards" from="0.5 0.5 0.5" to="1 1 1"></a-animation>
     </a-cursor>
   </a-camera>
-
-  <!-- standard scene -->
-  <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-  <a-box position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9" shadow></a-box>
-  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-  <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-
-</a-scene>
+    </a-scene>
+  </body>
+</html>
