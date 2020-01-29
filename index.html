@@ -21,8 +21,6 @@
         position="-2.7 -1.5 -2.9"
         scale="4 3 4"
         rotation="0 0 0"
-        event-set__mouseenter="scale: 4 3.5 4"
-        event-set__mouseleave="scale: 4 3 4"
       ></a-entity>
       <a-text
         value="Kara Dailey"
@@ -154,6 +152,10 @@
         material="color: #6A92AD"
         geometry="primitive: plane; width: 4; height: 4"
         scale="5 5 5"
+        event-set__mouseenter="color: #29B0AC"
+        event-set__mouseleave="color: #6A92AD"
+        event-set__mousedown="opacity: 0.5"
+        event-set__mouseup="opacity: 1"
       ></a-plane>
 
       <a-sky
@@ -162,8 +164,11 @@
         material="color: #6495ED; side: back; shader: flat; npot: true"
         geometry="primitive: sphere; radius: 500; segmentsWidth: 64; segmentsHeight: 32"
         scale="-1 1 1"
+        event-set__mouseenter="color: #200D38"
+        event-set__mouseleave="color: #6A92AD"
+        event-set__mousedown="opacity: 0.5"
+        event-set__mouseup="opacity: 1"
       ></a-sky>
     </a-scene>
   </body>
 </html>
-
