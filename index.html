@@ -8,7 +8,11 @@
     <script src="https://unpkg.com/aframe-event-set-component/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
-    <a-scene cursor="rayOrigin: mouse">
+    <a-scene
+      cursor="rayOrigin: mouse"
+      raycaster="objects: .clickable"
+      background="color: black"
+    >
       <a-assets>
         <!-- Stolen from Google Poly - by google :-) -->
         <a-asset-item
@@ -68,8 +72,6 @@
         material="color: #E4CA91"
         geometry="primitive: sphere; radius: .8"
         scale="0.1 0.15 0.05"
-        event-set__mouseenter="color: #af7a65 "
-        event-set__mouseleave="color: #E4CA91"
       ></a-sphere>
 
       <a-sphere
@@ -80,11 +82,10 @@
         material="color: #E4CA91"
         geometry="primitive: sphere; radius: .8"
         scale="0.05 0.05 0.05"
-        event-set__mouseenter="color: #af7a65 "
-        event-set__mouseleave="color: #E4CA91"
       ></a-sphere>
 
       <a-cylinder
+        class="clickable"
         id="post1"
         position="0 0 -1.15"
         radius="0.5"
@@ -94,8 +95,9 @@
         geometry="primitive: cylinder; radius: 0.5; height: 2"
         scale="0.1 1.7 0.1"
         shadow
-        event-set__mousedown="opacity: 0.8"
-        event-set__mouseup="opacity: 1"
+        event-set__click="radius: 0.9"
+        event-set__mouseenter="opacity: 0.3"
+        event-set__mouseleave="opacity: 1.0"
       ></a-cylinder>
 
       <a-cylinder
@@ -143,6 +145,7 @@
       ></a-cylinder>
 
       <a-plane
+        class="clickable"
         id="ocean"
         position="-5 0.8 -4"
         rotation="-90 0 10"
@@ -152,23 +155,31 @@
         material="color: #6A92AD"
         geometry="primitive: plane; width: 4; height: 4"
         scale="5 5 5"
-        event-set__mouseenter="color: #29B0AC"
-        event-set__mouseleave="color: #6A92AD"
-        event-set__mousedown="opacity: 0.5"
-        event-set__mouseup="opacity: 1"
+        event-set__click="color: #29B0AC"
+        event-set__mouseenter="opacity: 0.8"
+        event-set__mouseleave="opacity: 1.0"
       ></a-plane>
 
       <a-sky
+        class="clickable"
         id="sky"
         color="#6495ED"
         material="color: #6495ED; side: back; shader: flat; npot: true"
         geometry="primitive: sphere; radius: 500; segmentsWidth: 64; segmentsHeight: 32"
         scale="-1 1 1"
-        event-set__mouseenter="color: #200D38"
-        event-set__mouseleave="color: #6A92AD"
-        event-set__mousedown="opacity: 0.5"
-        event-set__mouseup="opacity: 1"
+        event-set__click="color: #200D38"
+        event-set__mouseenter="opacity: 0.8"
+        event-set__mouseleave="opacity: 1.0"
       ></a-sky>
+      <a-camera>
+        <a-cursor
+          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+          color="white"
+          fuse="true"
+        ></a-cursor>
+      </a-camera>
     </a-scene>
   </body>
 </html>
